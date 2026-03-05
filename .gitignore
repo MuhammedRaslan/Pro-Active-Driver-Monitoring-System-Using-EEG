@@ -27,14 +27,12 @@ wheels/
 .ipynb_checkpoints
 */.ipynb_checkpoints/*
 
-# Data files (large EEG datasets)
-*.edf
-*.set
-*.fdt
-DROZY/
-SADT/
+# Virtual Environment
+venv/
+ENV/
+env/
 
-# IDEs
+# IDE
 .vscode/
 .idea/
 *.swp
@@ -44,11 +42,27 @@ SADT/
 # OS
 .DS_Store
 Thumbs.db
+desktop.ini
+
+# Large Dataset Files (full EDF)
+DROZY/*_full.edf
+SADT/
+Files/
+
+# Exclude full datasets, keep only O1/O2 extracts
+DROZY/*.edf
+!DROZY/*_O1_O2.edf
+
+# Generated PDFs (optional - can include if you want)
+*.pdf
 
 # Temporary files
 *.tmp
+*.temp
 *.log
-*.bak
 
-# Generated PDFs (optional - uncomment if you want to include PDFs)
-*.pdf
+# PowerShell scripts (optional)
+*.ps1
+
+# Project specific
+Project_brief.txt
